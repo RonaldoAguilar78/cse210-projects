@@ -35,6 +35,6 @@ public class SimpleGoal : Goal
     public override string GetStringRepresentation()
     {
         // This formats the data so it can be easily saved to a text file.
-        return $"SimpleGoal:{Name},{Description},{Points},{_isComplete}";
+        return $"SimpleGoal:{GetName()},{GetDescription()},{GetPoints()},{_isComplete}";
     }
 }

@@ -54,7 +54,7 @@ public class GoalManager
         Console.WriteLine("The goals are:");
         for (int i = 0; i < _goals.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {_goals[i].Name}");
+            Console.WriteLine($"{i + 1}. {_goals[i].GetName()}");
         }
     }
 
@@ -124,12 +124,12 @@ public class GoalManager
             selectedGoal.RecordEvent();
 
             // Parse the string points to an integer to add to the score
-            int pointsEarned = int.Parse(selectedGoal.Points);
+            int pointsEarned = int.Parse(selectedGoal.GetPoints());
 
             // If it is a checklist goal, and it JUST became complete, add the bonus!
             if (selectedGoal is ChecklistGoal checklistGoal && !wasCompleteBefore && selectedGoal.IsComplete())
             {
-                pointsEarned += checklistGoal.Bonus;
+                pointsEarned += checklistGoal.GetBonus();
             }
 
             _score += pointsEarned;

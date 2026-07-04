@@ -18,11 +18,21 @@ public abstract class Goal
         _points = points;
     }
 
-    // Properties (Getters) to allow read-only access to our private fields
-    // This allows the GoalManager to read the names and points without changing them.
-    public string Name => _shortName;
-    public string Description => _description;
-    public string Points => _points;
+    // Traditional Getter Methods instead of properties
+    public string GetName()
+    {
+        return _shortName;
+    }
+
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public string GetPoints()
+    {
+        return _points;
+    }
 
     // ABSTRACT METHODS: These have no body in the base class. 
     // We are forcing every derived class (child class) to write its own version 

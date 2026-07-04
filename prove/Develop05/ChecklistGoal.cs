@@ -23,8 +23,11 @@ public class ChecklistGoal : Goal
         _bonus = bonus;
     }
 
-    // Public getter so the GoalManager can access the bonus points when completed
-    public int Bonus => _bonus;
+    // Public getter method so the GoalManager can access the bonus points
+    public int GetBonus()
+    {
+        return _bonus;
+    }
 
     public override void RecordEvent()
     {
@@ -41,15 +44,15 @@ public class ChecklistGoal : Goal
         return _amountCompleted >= _target;
     }
 
-    // POLYMORPHISM IN ACTION: We override the virtual method to add the fraction (e.g., 2/5 times).
+    // POLYMORPHISM IN ACTION: We override the virtual method to add the fraction.
     public override string GetDetailsString()
     {
         string checkbox = IsComplete() ? "[X]" : "[ ]";
-        return $"{checkbox} {Name} ({Description}) -- Currently completed: {_amountCompleted}/{_target}";
+        return $"{checkbox} {GetName()} ({GetDescription()}) -- Currently completed: {_amountCompleted}/{_target}";
     }
 
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal:{Name},{Description},{Points},{_bonus},{_target},{_amountCompleted}";
+        return $"ChecklistGoal:{GetName()},{GetDescription()},{GetPoints()},{_bonus},{_target},{_amountCompleted}";
     }
 }
