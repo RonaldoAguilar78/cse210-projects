@@ -28,13 +28,8 @@ public class Address
     public string GetCountry() { return _country; }
     public void SetCountry(string country) { _country = country; }
 
-    public bool IsInUSA()
-    {
-        return _country.ToUpper() == "USA" || _country.ToUpper() == "UNITED STATES";
-    }
-
     public string GetFullAddress()
     {
-        return $"{_street}\n{_city}, {_stateProvince}\n{_country}";
+        return $"{_street}, {_city}, {_stateProvince}, {_country}";
     }
 }

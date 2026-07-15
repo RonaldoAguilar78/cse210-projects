@@ -11,17 +11,12 @@ public class Customer
         _address = address;
     }
 
-    public string Name
-    {
-        get { return _name; }
-        set { _name = value; }
-    }
+    // Getter and Setter methods
+    public string GetName() { return _name; }
+    public void SetName(string name) { _name = name; }
 
-    public Address Address
-    {
-        get { return _address; }
-        set { _address = value; }
-    }
+    public Address GetAddress() { return _address; }
+    public void SetAddress(Address address) { _address = address; }
 
     public bool IsInUSA()
     {

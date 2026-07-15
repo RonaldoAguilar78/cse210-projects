@@ -12,17 +12,12 @@ public class Order
         _products = new List<Product>();
     }
 
-    public Customer Customer
-    {
-        get { return _customer; }
-        set { _customer = value; }
-    }
+    // Getter and Setter methods
+    public Customer GetCustomer() { return _customer; }
+    public void SetCustomer(Customer customer) { _customer = customer; }
 
-    public List<Product> Products
-    {
-        get { return _products; }
-        set { _products = value; }
-    }
+    public List<Product> GetProducts() { return _products; }
+    public void SetProducts(List<Product> products) { _products = products; }
 
     public void AddProduct(Product product)
     {
@@ -49,7 +44,7 @@ public class Order
         label += "------------\n";
         foreach (Product product in _products)
         {
-            label += $"[{product.ProductId}] {product.Name} (Qty: {product.Quantity})\n";
+            label += $"[{product.GetProductId()}] {product.GetName()} (Qty: {product.GetQuantity()})\n";
         }
         return label;
     }
@@ -58,8 +53,8 @@ public class Order
     {
         string label = "SHIPPING LABEL\n";
         label += "--------------\n";
-        label += $"{_customer.Name}\n";
-        label += $"{_customer.Address.GetFullAddress()}";
+        label += $"{_customer.GetName()}\n";
+        label += $"{_customer.GetAddress().GetFullAddress()}";
         return label;
     }
 }

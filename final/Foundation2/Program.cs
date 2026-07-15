@@ -32,7 +32,6 @@ class Program
             Console.WriteLine(order.GetShippingLabel());
             Console.WriteLine();
             
-            // Output formatted as currency
             Console.WriteLine($"TOTAL PRICE: ${order.CalculateTotalCost():F2}");
             Console.WriteLine(new string('=', 30));
             Console.WriteLine();

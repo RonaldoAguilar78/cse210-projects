@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 public class Video
 {
-    // Private backing fields
     private string _title;
     private string _author;
-    private int _length; // In seconds
+    private int _length; 
     private List<Comment> _comments;
 
     public Video(string title, string author, int length)
@@ -17,37 +16,52 @@ public class Video
         _comments = new List<Comment>();
     }
 
-    public string Title
+    // Getter and Setter methods
+    public string GetTitle()
     {
-        get { return _title; }
-        set { _title = value; }
+        return _title;
     }
 
-    public string Author
+    public void SetTitle(string title)
     {
-        get { return _author; }
-        set { _author = value; }
+        _title = title;
     }
 
-    public int Length
+    public string GetAuthor()
     {
-        get { return _length; }
-        set { _length = value; }
+        return _author;
     }
 
-    public List<Comment> Comments
+    public void SetAuthor(string author)
     {
-        get { return _comments; }
-        set { _comments = value; }
+        _author = author;
     }
 
-    // Method to add a comment to the list
+    public int GetLength()
+    {
+        return _length;
+    }
+
+    public void SetLength(int length)
+    {
+        _length = length;
+    }
+
+    public List<Comment> GetComments()
+    {
+        return _comments;
+    }
+
+    public void SetComments(List<Comment> comments)
+    {
+        _comments = comments;
+    }
+
     public void AddComment(Comment comment)
     {
         _comments.Add(comment);
     }
 
-    // Method returning the total number of comments
     public int GetCommentCount()
     {
         return _comments.Count;

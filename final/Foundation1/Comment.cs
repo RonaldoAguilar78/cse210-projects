@@ -2,7 +2,6 @@ using System;
 
 public class Comment
 {
-    // Private backing fields
     private string _name;
     private string _text;
 
@@ -12,17 +11,24 @@ public class Comment
         _text = text;
     }
 
-    // Fully expanded property for Name
-    public string Name
+    // Getter and Setter methods
+    public string GetName()
     {
-        get { return _name; }
-        set { _name = value; }
+        return _name;
     }
 
-    // Fully expanded property for Text
-    public string Text
+    public void SetName(string name)
     {
-        get { return _text; }
-        set { _text = value; }
+        _name = name;
+    }
+
+    public string GetText()
+    {
+        return _text;
+    }
+
+    public void SetText(string text)
+    {
+        _text = text;
     }
 }
